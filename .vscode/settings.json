@@ -1,0 +1,24 @@
+{
+  // Astro
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "files.associations": {
+    "*.astro": "astro"
+  },
+
+  // Editor
+  "editor.insertSpaces": true,
+
+  // Emmet
+  "emmet.includeLanguages": {
+    "astro": "html"
+  },
+  "emmet.variables": {
+    "lang": "ja"
+  },
+
+  // cSpell
+  "cSpell.ignorePaths": ["docs/_generated/**"],
+  "cSpell.words": []
+}
