@@ -1,8 +1,18 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"],
   "compilerOptions": {
-    "strictNullChecks": true
-  }
+    "strict": true,
+    "strictNullChecks": true,
+    "moduleResolution": "bundler",
+    "module": "esnext",
+    "jsx": "preserve",
+    "types": ["astro/client"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.astro",
+    ".astro/types.d.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
 }
