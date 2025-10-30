@@ -8,4 +8,12 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   site: "https://mugbee2025.github.io",
   integrations: [mdx(), sitemap()],
+  // WSL2でのホットリロード対応
+  vite: {
+    server: {
+      watch: {
+        usePolling: true,
+      },
+    },
+  },
 });
