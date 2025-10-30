@@ -1,62 +1,49 @@
-# Astro Starter Kit: Blog
+# ゆるーりサモンズボード攻略ブログ
 
-```sh
-npm create astro@latest -- --template blog
-```
+## 概要
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+スマホゲーム「[サモンズボード](https://sb.gungho.jp/)」の攻略ブログです。
 
-Features:
+| 項目           | 内容                  |
+| -------------- | --------------------- |
+| `サイト管理者` | Mugbee（まぐびー）    |
+| `サイトURL`    | mugbee2025.github.io  |
+| `対象ゲーム`   | サモンズボード        |
+| `公式サイト`   | https://sb.gungho.jp/ |
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+## 技術スタック
 
-## 🚀 Project Structure
+| カテゴリ         | 使用技術                               |
+| ---------------- | -------------------------------------- |
+| `フレームワーク` | Astro                                  |
+| `ホスティング`   | GitHub Pages                           |
+| `開発環境`       | Windows 11 + WSL2                      |
+| `ランタイム`     | Node.js                                |
+| `エディタ`       | Visual Studio Code                     |
+| `コード品質管理` | Prettier / ESLint / Stylelint / cSpell |
 
-Inside of your Astro project, you'll see the following folders and files:
+## 権利表記
 
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
+当ブログは、ガンホー・オンライン・エンターテイメント株式会社が提供する「サモンズボード」の攻略情報を扱っています。
+ゲーム関連の画像・テキスト等の著作権はガンホー・オンライン・エンターテイメント株式会社に帰属します。
+© GungHo Online Entertainment, Inc. All Rights Reserved.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+| 項目                       | リンク                                      |
+| -------------------------- | ------------------------------------------- |
+| `著作物の利用ガイドライン` | https://www.gungho.jp/manner/copyright.html |
+| `ガンホーゲームズ公式`     | http://www.gungho.jp/                       |
+| `サモンズボード`           | https://sb.gungho.jp/                       |
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+当ブログは権利侵害や誹謗中傷を目的としたものではありません。
+記事の取り下げ要求などがございましたら、権利者様よりご連絡をお願いいたします。
+mugbee2025@gmail.com
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+## 免責事項
 
-Any static assets, like images, can be placed in the `public/` directory.
+- 当ブログからのリンク先で提供される情報やサービス等について、一切の責任を負いません。
+- コンテンツの正確性や安全性の保証はできません。情報が古くなっている場合があります。
+- 当ブログに掲載された内容によって生じた損害等について、一切の責任を負いかねますので予めご了承ください。
 
-## 🧞 Commands
+## お問い合わせ
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+記事に関するご意見・ご要望は、GitHub の Issues までお願いします。
