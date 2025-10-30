@@ -1,5 +1,15 @@
 {
- // Astro
+  // ESLint Flat Config
+  "eslint.useFlatConfig": true,
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "eslint.validate": ["javascript", "typescript", "astro"],
+
+  // Astro
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },
@@ -26,6 +36,15 @@
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+
+  // Stylelint
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "html",
+    "astro"
+  ],
+  "stylelint.configFile": "stylelint.config.mjs",
 
   // Editor
   "editor.insertSpaces": true,
