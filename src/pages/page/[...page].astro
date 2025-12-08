@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allPosts = await getCollection('blogs');
+  const sorted = allPosts.sort((a, b) => {
+    return (
+      new Date(b.data.publishedAt).getTime() -
+      new Date(a.data.publishedAt).getTime()
+    );
+  });
+  return paginate(sorted, { pageSize: 5 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<BaseLayout title={`Blog — Page ${page.currentPage}`}>
+  <Header />
+  <main>
+    <ul>
+      {
+        page.data.map((post) => (
+          <li>
+            <a href={`/page/${post.id}/`}>{post.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <nav class="pagination">
+      {
+        page.currentPage === 2 ? (
+          <a href="/">« 前へ</a>
+        ) : page.currentPage > 2 ? (
+          <a href={`/page/${page.currentPage - 1}/`}>« 前へ</a>
+        ) : null
+      }
+
+      {
+        [...Array(page.lastPage)].map((_, i) => {
+          const n = i + 1;
+          const href = n === 1 ? '/' : `/page/${n}/`;
+
+          return (
+            <a
+              class:list={['page-number', { current: page.currentPage === n }]}
+              href={href}
+            >
+              {n}
+            </a>
+          );
+        })
+      }
+
+      {
+        page.currentPage < page.lastPage && (
+          <a href={`/page/${page.currentPage + 1}/`}>次へ »</a>
+        )
+      }
+    </nav>
+  </main>
+  <Footer />
+</BaseLayout>

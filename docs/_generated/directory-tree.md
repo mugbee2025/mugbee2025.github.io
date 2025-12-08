@@ -1,7 +1,8 @@
 mugbee2025
 ├── .astro
 │ ├── collections
-│ │ └── blog.schema.json
+│ │ ├── blog.schema.json
+│ │ └── blogs.schema.json
 │ ├── content-assets.mjs
 │ ├── content-modules.mjs
 │ ├── content.d.ts
@@ -36,32 +37,29 @@ mugbee2025
 │ │ ├── blog-placeholder-5.jpg
 │ │ └── blog-placeholder-about.jpg
 │ ├── components
+│ │ ├── recommend
+│ │ │ └── Recommend.astro
 │ │ ├── BaseHead.astro
 │ │ ├── Footer.astro
 │ │ ├── FormattedDate.astro
 │ │ ├── Header.astro
 │ │ └── HeaderLink.astro
 │ ├── content
-│ │ └── blog
-│ │ ├── first-post.md
-│ │ ├── markdown-style-guide.md
-│ │ ├── second-post.md
-│ │ ├── third-post.md
-│ │ └── using-mdx.mdx
+│ │ └── config.ts
 │ ├── layouts
-│ │ └── BlogPost.astro
+│ │ └── BaseLayout.astro
 │ ├── pages
-│ │ ├── blog
-│ │ │ ├── [...slug].astro
-│ │ │ └── index.astro
+│ │ ├── page
+│ │ │ └── [...page].astro
+│ │ ├── [...slug].astro
 │ │ ├── about.astro
 │ │ ├── index.astro
 │ │ └── rss.xml.js
 │ ├── styles
 │ │ └── global.css
-│ ├── consts.ts
-│ └── content.config.ts
+│ └── consts.ts
 ├── .browserslistrc
+├── .env
 ├── .gitignore
 ├── .nojekyll
 ├── .prettierignore

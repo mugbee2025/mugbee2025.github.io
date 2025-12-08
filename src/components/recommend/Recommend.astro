@@ -1,0 +1,69 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+type Blog = CollectionEntry<'blogs'>;
+
+interface Props {
+  contents: Blog[];
+  title: string;
+}
+
+const { contents, title } = Astro.props;
+---
+
+<section class="recommend">
+  <div class="box">
+    <h3 class="title">{title}</h3>
+
+    <div class="list">
+      {
+        contents.map((item) => (
+          <a href={`/${item.id}`} class="item">
+            <img
+              src={item.data.thumbnail?.url}
+              alt={item.data.title}
+              width={item.data.thumbnail?.width}
+              height={item.data.thumbnail?.height}
+              class="thumb"
+            />
+
+            <div class="meta">
+              <h4 class="post-title">{item.data.title}</h4>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .recommend {
+    margin-top: 2rem;
+  }
+
+  .box {
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+  }
+
+  .list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .item {
+    display: flex;
+    gap: 1rem;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .thumb {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+</style>

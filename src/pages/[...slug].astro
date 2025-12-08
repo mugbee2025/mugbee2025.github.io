@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Recommend from '../components/recommend/Recommend.astro';
+import { getCollection } from 'astro:content';
+
+// 全ブログ取得
+export async function getStaticPaths() {
+  const blogs = await getCollection('blogs');
+
+  return blogs.map((blog) => ({
+    params: { slug: blog.id },
+    props: { blog, blogs },
+  }));
+}
+
+const { blog, blogs } = Astro.props;
+
+// ▼ 曜日を返すヘルパー
+const getWeekday = (date: Date) => {
+  const week = ['日', '月', '火', '水', '木', '金', '土'];
+  return week[date.getDay()];
+};
+
+// ▼ 日付をフォーマット（YYYY/MM/DD(曜)）
+const formatDate = (dateStr: string) => {
+  const date = new Date(dateStr);
+  const formatted = date.toLocaleDateString('ja-JP', {
+    timeZone: 'Asia/Tokyo',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  });
+  const weekday = getWeekday(date);
+  return `${formatted}(${weekday})`;
+};
+
+// 公開・更新の整形
+const publishedDate = formatDate(blog.data.publishedAt);
+const updatedDate = formatDate(blog.data.updatedAt);
+
+// ピックアップ
+const pickupIds = blog.data.pickup ?? [];
+const pickupBlogs = pickupIds
+  .map((p) => blogs.find((b) => b.id === p.id))
+  .filter((b): b is (typeof blogs)[number] => Boolean(b));
+---
+
+<BaseLayout title={blog.data.title}>
+  <Header />
+
+  <main>
+    <h1 class="title">{blog.data.title}</h1>
+
+    {
+      blog.data.thumbnail && (
+        <img src={blog.data.thumbnail.url} alt={blog.data.title} />
+      )
+    }
+
+    <p>
+      公開 {publishedDate}
+      {blog.data.updatedAt !== blog.data.publishedAt && <>更新 {updatedDate}</>}
+    </p>
+
+    <div set:html={blog.data.content} />
+
+    <Recommend contents={pickupBlogs} title="ピックアップ" />
+  </main>
+
+  <Footer />
+</BaseLayout>
