@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+import type { Tag } from '../../content/config';
+
+const posts = await getCollection('blogs');
+
+// カテゴリー一覧
+const categories = [...new Set(posts.flatMap((p) => p.data.category ?? []))];
+
+// タグ一覧（slug でユニーク化）
+const tagMap = new Map<string, Tag>();
+
+for (const post of posts) {
+  for (const tag of post.data.tags ?? []) {
+    tagMap.set(tag.slug, tag);
+  }
+}
+
+const tags: Tag[] = Array.from(tagMap.values());
+---
+
+<BaseLayout pageTitle="カテゴリー & タグ 一覧">
+  <Header />
+
+  <h1>カテゴリー一覧</h1>
+  <ul>
+    {
+      categories.map((c) => (
+        <li>
+          <a href={`/taxonomy/${c}`}>{c}</a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h1>タグ一覧</h1>
+  <ul>
+    {
+      tags.map((tag) => (
+        <li>
+          <a href={`/taxonomy/${tag.slug}`}>#{tag.name}</a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <Footer />
+</BaseLayout>

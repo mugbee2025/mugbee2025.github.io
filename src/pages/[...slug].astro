@@ -60,16 +60,26 @@ const pickupBlogs = pickupIds
     }
 
     {
-      blog.data.tags?.length ? (
+      blog.data.category?.length && (
         <ul>
-          {blog.data.tags.map((tag) => (
+          {blog.data.category.map((cat) => (
             <li>
-              <a href={`/tags/${tag.slug}`}>{tag.name}</a>
+              <a href={`/taxonomy/${cat}`}>{cat}</a>
             </li>
           ))}
         </ul>
-      ) : (
-        <p>タグはありません</p>
+      )
+    }
+
+    {
+      blog.data.tags?.length && (
+        <ul>
+          {blog.data.tags.map((tag) => (
+            <li>
+              <a href={`/taxonomy/${tag.slug}`}>#{tag.name}</a>
+            </li>
+          ))}
+        </ul>
       )
     }
 

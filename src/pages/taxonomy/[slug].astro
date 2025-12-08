@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blogs');
+
+  // カテゴリー
+  const categoryList = [
+    ...new Set(posts.flatMap((p) => p.data.category ?? [])),
+  ];
+
+  // タグ（slug）
+  const tagList = [
+    ...new Set(posts.flatMap((p) => (p.data.tags ?? []).map((t) => t.slug))),
+  ];
+
+  const allSlugs = [...categoryList, ...tagList];
+
+  return allSlugs.map((slug) => {
+    const filtered = posts.filter((post) => {
+      const tagSlugs = post.data.tags?.map((t) => t.slug) ?? [];
+      const categories = post.data.category ?? [];
+
+      return tagSlugs.includes(slug) || categories.includes(slug);
+    });
+
+    return {
+      params: { slug },
+      props: { slug, posts: filtered },
+    };
+  });
+}
+
+const { slug, posts } = Astro.props;
+---
+
+<BaseLayout pageTitle={`分類: ${slug}`}>
+  <Header />
+
+  <h1>「{slug}」に該当する記事</h1>
+
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <a href={`/${post.data.slug}`}>{post.data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <Footer />
+</BaseLayout>

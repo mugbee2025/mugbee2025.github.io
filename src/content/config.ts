@@ -6,17 +6,14 @@ const client = createClient({
   apiKey: import.meta.env.PUBLIC_MICROCMS_API_KEY,
 });
 
-// microCMSローダー
+// microCMS ローダー
 const microCMSLoader = (endpoint: string) => {
   return async () => {
     try {
-      const response = await client.getAllContents({
-        endpoint,
-      });
-
+      const response = await client.getAllContents({ endpoint });
       return response;
     } catch (error) {
-      console.error(`microCMSからの${endpoint}取得に失敗:`, error);
+      console.error(`microCMS から ${endpoint} の取得に失敗:`, error);
       return [];
     }
   };
@@ -35,19 +32,15 @@ const thumbnailField = z.object({
   height: z.number().optional(),
 });
 
-const pickupField = z
-  .array(
-    z.object({
-      id: z.string(),
-    })
-  )
-  .optional();
+const pickupField = z.array(z.object({ id: z.string() })).optional();
 
-const tagField = z.object({
+export const tagField = z.object({
   id: z.string(),
   name: z.string(),
   slug: z.string(),
 });
+
+export type Tag = z.infer<typeof tagField>;
 
 const blogs = defineCollection({
   loader: microCMSLoader('blogs'),
