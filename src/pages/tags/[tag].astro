@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  // 全ブログ取得
+  const allPosts = await getCollection('blogs');
+
+  // 全タグを slug キーでユニーク化してタグオブジェクト配列を作る
+  const tagMap = new Map<string, { id: string; name: string; slug: string }>();
+  for (const post of allPosts) {
+    for (const t of post.data.tags ?? []) {
+      if (!tagMap.has(t.slug)) tagMap.set(t.slug, t);
+    }
+  }
+  const uniqueTags = Array.from(tagMap.values());
+
+  // タグごとのページを生成（slug を params.tag に）
+  return uniqueTags.map((tagObj) => {
+    const filteredPosts = allPosts.filter((post) =>
+      post.data.tags?.some((t) => t.slug === tagObj.slug)
+    );
+
+    return {
+      params: { tag: tagObj.slug },
+      props: { posts: filteredPosts, tagName: tagObj.name },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts, tagName } = Astro.props;
+---
+
+<BaseLayout pageTitle={`タグ: ${tagName ?? tag}`}>
+  <Header />
+
+  <h1>「{tagName ?? tag}」のタグが付いた記事</h1>
+
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <a href={`/${post.data.slug}`}>{post.data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <Footer />
+</BaseLayout>

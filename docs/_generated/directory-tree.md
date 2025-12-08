@@ -30,18 +30,11 @@ mugbee2025
 │ └── favicon.svg
 ├── src
 │ ├── assets
-│ │ ├── blog-placeholder-1.jpg
-│ │ ├── blog-placeholder-2.jpg
-│ │ ├── blog-placeholder-3.jpg
-│ │ ├── blog-placeholder-4.jpg
-│ │ ├── blog-placeholder-5.jpg
-│ │ └── blog-placeholder-about.jpg
 │ ├── components
 │ │ ├── recommend
 │ │ │ └── Recommend.astro
 │ │ ├── BaseHead.astro
 │ │ ├── Footer.astro
-│ │ ├── FormattedDate.astro
 │ │ ├── Header.astro
 │ │ └── HeaderLink.astro
 │ ├── content
@@ -51,6 +44,9 @@ mugbee2025
 │ ├── pages
 │ │ ├── page
 │ │ │ └── [...page].astro
+│ │ ├── tags
+│ │ │ ├── [tag].astro
+│ │ │ └── index.astro
 │ │ ├── [...slug].astro
 │ │ ├── about.astro
 │ │ ├── index.astro

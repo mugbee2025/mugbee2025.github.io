@@ -25,7 +25,7 @@ const totalPages = Math.ceil(blogs.length / PAGE_SIZE);
       {
         firstPageBlogs.map((blog) => (
           <li>
-            <a href={`/${blog.id}/`}>{blog.data.title}</a>
+            <a href={`/${blog.data.slug}/`}>{blog.data.title}</a>
           </li>
         ))
       }

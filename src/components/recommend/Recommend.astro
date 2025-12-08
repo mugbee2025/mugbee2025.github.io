@@ -18,7 +18,7 @@ const { contents, title } = Astro.props;
     <div class="list">
       {
         contents.map((item) => (
-          <a href={`/${item.id}`} class="item">
+          <a href={`/${item.data.slug}`} class="item">
             <img
               src={item.data.thumbnail?.url}
               alt={item.data.title}

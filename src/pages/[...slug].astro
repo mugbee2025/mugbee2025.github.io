@@ -10,7 +10,7 @@ export async function getStaticPaths() {
   const blogs = await getCollection('blogs');
 
   return blogs.map((blog) => ({
-    params: { slug: blog.id },
+    params: { slug: blog.data.slug },
     props: { blog, blogs },
   }));
 }
@@ -56,6 +56,20 @@ const pickupBlogs = pickupIds
     {
       blog.data.thumbnail && (
         <img src={blog.data.thumbnail.url} alt={blog.data.title} />
+      )
+    }
+
+    {
+      blog.data.tags?.length ? (
+        <ul>
+          {blog.data.tags.map((tag) => (
+            <li>
+              <a href={`/tags/${tag.slug}`}>{tag.name}</a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>タグはありません</p>
       )
     }
 
