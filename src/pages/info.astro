@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="運営情報 | ゆるーりサモンズボード攻略ブログ"
+  description="当ブログの運営情報および免責事項・プライバシーポリシーページです。"
+>
+  <Header />
+
+  <main>
+    <h1>運営情報</h1>
+
+    <article>
+      <section aria-labelledby="site-overview">
+        <h2 id="site-overview">サイト概要</h2>
+        <p>
+          スマートフォンゲーム「<a href="https://sb.gungho.jp/"
+            >サモンズボード</a
+          >」の攻略情報を発信するブログです。
+        </p>
+
+        <dl>
+          <dt>サイト名</dt>
+          <dd>ゆるーりサモンズボード攻略ブログ</dd>
+          <dt>サイト管理者</dt>
+          <dd>Mugbee（まぐびー）</dd>
+          <dt>サイトURL</dt>
+          <dd>https://mugbee2025.github.io</dd>
+          <dt>対象ゲーム</dt>
+          <dd>サモンズボード</dd>
+          <dt>公式サイト</dt>
+          <dd><a href="https://sb.gungho.jp/">https://sb.gungho.jp/</a></dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="tech-stack">
+        <h2 id="tech-stack">技術スタック</h2>
+        <dl>
+          <dt>フレームワーク</dt>
+          <dd>Astro</dd>
+          <dt>ホスティング</dt>
+          <dd>GitHub Pages</dd>
+          <dt>開発環境</dt>
+          <dd>Windows 11 + WSL2</dd>
+          <dt>ランタイム</dt>
+          <dd>Node.js</dd>
+          <dt>エディタ</dt>
+          <dd>Visual Studio Code</dd>
+          <dt>コード品質管理</dt>
+          <dd>Prettier / ESLint / Stylelint / cSpell</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="copyright">
+        <h2 id="copyright">著作権・権利表記</h2>
+        <p>
+          当ブログは、ガンホー・オンライン・エンターテイメント株式会社が提供する「サモンズボード」の攻略情報を扱っています。
+        </p>
+        <p>
+          ゲーム内の画像・テキスト・キャラクター名等の著作権は、ガンホー・オンライン・エンターテイメント株式会社に帰属します。
+        </p>
+        <p>
+          <small
+            >© GungHo Online Entertainment, Inc. All Rights Reserved.</small
+          >
+        </p>
+
+        <dl>
+          <dt>著作物の利用ガイドライン</dt>
+          <dd>
+            <a href="https://www.gungho.jp/manner/copyright.html">
+              https://www.gungho.jp/manner/copyright.html
+            </a>
+          </dd>
+          <dt>ガンホーゲームズ公式</dt>
+          <dd><a href="https://www.gungho.jp/">https://www.gungho.jp/</a></dd>
+          <dt>サモンズボード公式</dt>
+          <dd><a href="https://sb.gungho.jp/">https://sb.gungho.jp/</a></dd>
+        </dl>
+
+        <p>
+          当ブログに掲載されているオリジナルコンテンツ（記事文章、独自作成の画像等）の著作権は、当ブログ管理者に帰属します。無断転載・複製・配布等は禁止されています。引用される場合は、必ず引用元を明示してください。
+        </p>
+
+        <p>
+          当ブログは権利侵害や誹謗中傷を目的としたものではありません。記事の取り下げ要求等がございましたら、権利者様より下記お問い合わせ先までご連絡をお願いいたします。
+        </p>
+      </section>
+
+      <section aria-labelledby="disclaimer">
+        <h2 id="disclaimer">免責事項</h2>
+        <ul>
+          <li>
+            当ブログに掲載されている情報は、管理者の個人的な見解や攻略方法であり、正確性・完全性・有用性を保証するものではありません。
+          </li>
+          <li>
+            情報が古くなっている場合や、ゲームのアップデートにより内容が変更されている場合があります。
+          </li>
+          <li>
+            当ブログに掲載された内容を利用したことによって生じた損害等について、一切の責任を負いかねますので予めご了承ください。
+          </li>
+          <li>
+            当ブログからのリンク先で提供される情報やサービス等について、一切の責任を負いません。
+          </li>
+          <li>当ブログの内容は予告なく変更・削除される場合があります。</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="privacy">
+        <h2 id="privacy">プライバシーポリシー</h2>
+
+        <section aria-labelledby="privacy-collection">
+          <h3 id="privacy-collection">個人情報の収集と利用</h3>
+          <p>
+            当ブログでは、お問い合わせ時に名前（ハンドルネーム）、メールアドレス等の個人情報をお尋ねすることがあります。これらの情報は、お問い合わせへの回答や必要な情報を電子メールでご連絡する場合にのみ使用し、その他の目的では使用いたしません。
+          </p>
+        </section>
+
+        <section aria-labelledby="privacy-analytics">
+          <h3 id="privacy-analytics">アクセス解析ツールについて</h3>
+          <p>
+            当ブログでは、Google
+            アナリティクスを使用してサイトの利用状況を分析しています。Google
+            アナリティクスはクッキー（Cookie）を使用してデータを収集しますが、個人を特定する情報は含まれません。
+          </p>
+          <p>
+            この機能はクッキーを無効にすることで収集を拒否することができます。詳細については、
+            <a
+              href="https://marketingplatform.google.com/about/analytics/terms/jp/"
+              >Google アナリティクス利用規約</a
+            >および
+            <a href="https://policies.google.com/privacy"
+              >Google ポリシーと規約</a
+            >をご確認ください。
+          </p>
+        </section>
+
+        <section aria-labelledby="privacy-disclosure">
+          <h3 id="privacy-disclosure">情報の共有と開示</h3>
+          <p>
+            当ブログは、法的要求がある場合や権利・財産・安全の保護のために必要と判断される場合を除き、個人情報を第三者に開示または共有しません。
+          </p>
+        </section>
+
+        <section aria-labelledby="privacy-links">
+          <h3 id="privacy-links">リンクについて</h3>
+          <p>
+            当ブログはリンクフリーです。許可や事前連絡は不要ですが、以下の場合はリンクをご遠慮ください。
+          </p>
+          <ul>
+            <li>誹謗中傷や違法コンテンツを含むサイトからのリンク</li>
+            <li>インラインフレーム（iframe）等による改変リンク</li>
+            <li>当ブログの内容を誤認させるようなリンク</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="privacy-changes">
+          <h3 id="privacy-changes">プライバシーポリシーの変更</h3>
+          <p>
+            当ブログは必要に応じて本プライバシーポリシーを変更することがあります。変更後の内容は当ブログ上で公開された時点で効力を生じます。
+          </p>
+        </section>
+      </section>
+
+      <section aria-labelledby="contact">
+        <h2 id="contact">お問い合わせ</h2>
+        <p>
+          記事に関するご意見・ご要望・訂正等は、以下のいずれかの方法でお問い合わせください。
+        </p>
+        <ul>
+          <li>
+            GitHub Issues：
+            <a href="https://github.com/mugbee2025/mugbee2025.github.io/issues">
+              https://github.com/mugbee2025/mugbee2025.github.io/issues
+            </a>
+          </li>
+          <li>
+            YouTube チャンネル掲示板：
+            <a
+              href="https://www.youtube.com/post/Ugkxiv4f55qYlbCyO0MfhoyXIyDdi41q5vlh"
+            >
+              https://www.youtube.com/post/Ugkxiv4f55qYlbCyO0MfhoyXIyDdi41q5vlh
+            </a>
+          </li>
+          <li>
+            X（旧Twitter）DM：
+            <a href="https://x.com/mugbee_summons">
+              https://x.com/mugbee_summons
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        <p>
+          <time datetime="2025-12">策定日：2025年12月</time><br />
+          <time datetime="2025-12">最終改定日：2025年12月</time>
+        </p>
+      </footer>
+    </article>
+  </main>
+
+  <Footer />
+</BaseLayout>

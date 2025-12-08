@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 
 let blogs = await getCollection('blogs');
@@ -17,7 +16,10 @@ const firstPageBlogs = blogs.slice(0, PAGE_SIZE);
 const totalPages = Math.ceil(blogs.length / PAGE_SIZE);
 ---
 
-<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<BaseLayout
+  title="ゆるーりサモンズボード攻略ブログ"
+  description="スマホゲーム「サモンズボード」の攻略ブログです。"
+>
   <Header />
 
   <main>
