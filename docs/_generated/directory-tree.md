@@ -29,7 +29,6 @@ mugbee2025
 │ │ └── atkinson-regular.woff
 │ └── favicon.svg
 ├── src
-│ ├── assets
 │ ├── components
 │ │ ├── recommend
 │ │ │ └── Recommend.astro
@@ -41,19 +40,15 @@ mugbee2025
 │ │ └── config.ts
 │ ├── layouts
 │ │ └── BaseLayout.astro
-│ ├── pages
-│ │ ├── page
-│ │ │ └── [...page].astro
-│ │ ├── tags
-│ │ │ ├── [tag].astro
-│ │ │ └── index.astro
-│ │ ├── [...slug].astro
-│ │ ├── about.astro
-│ │ ├── index.astro
-│ │ └── rss.xml.js
-│ ├── styles
-│ │ └── global.css
-│ └── consts.ts
+│ └── pages
+│ ├── page
+│ │ └── [...page].astro
+│ ├── taxonomy
+│ │ ├── [slug].astro
+│ │ └── index.astro
+│ ├── [...slug].astro
+│ ├── index.astro
+│ └── info.astro
 ├── .browserslistrc
 ├── .env
 ├── .gitignore
