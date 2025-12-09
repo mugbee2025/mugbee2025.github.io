@@ -1,54 +1,50 @@
 mugbee2025
 ├── .astro
-│ ├── collections
-│ │ ├── blog.schema.json
-│ │ └── blogs.schema.json
-│ ├── content-assets.mjs
-│ ├── content-modules.mjs
-│ ├── content.d.ts
-│ ├── data-store.json
-│ ├── settings.json
-│ └── types.d.ts
+│   ├── collections
+│   │   ├── blog.schema.json
+│   │   └── blogs.schema.json
+│   ├── content-assets.mjs
+│   ├── content-modules.mjs
+│   ├── content.d.ts
+│   ├── data-store.json
+│   ├── settings.json
+│   └── types.d.ts
 ├── .gemini
-│ └── styleguide.md
+│   └── styleguide.md
 ├── .git
 ├── .github
-│ ├── workflows
-│ │ └── deploy.yml
-│ └── pull_request_template.md
+│   ├── workflows
+│   │   └── deploy.yml
+│   └── pull_request_template.md
 ├── .vscode
-│ ├── extensions.json
-│ └── settings.json
+│   ├── extensions.json
+│   └── settings.json
 ├── docs
-│ └── \_generated
-│ ├── directory-tree.md
-│ └── wsl-extensions.txt
+│   └── _generated
+│       ├── directory-tree.md
+│       └── wsl-extensions.txt
 ├── public
-│ ├── fonts
-│ │ ├── atkinson-bold.woff
-│ │ └── atkinson-regular.woff
-│ └── favicon.svg
 ├── src
-│ ├── components
-│ │ ├── recommend
-│ │ │ └── Recommend.astro
-│ │ ├── BaseHead.astro
-│ │ ├── Footer.astro
-│ │ ├── Header.astro
-│ │ └── HeaderLink.astro
-│ ├── content
-│ │ └── config.ts
-│ ├── layouts
-│ │ └── BaseLayout.astro
-│ └── pages
-│ ├── page
-│ │ └── [...page].astro
-│ ├── taxonomy
-│ │ ├── [slug].astro
-│ │ └── index.astro
-│ ├── [...slug].astro
-│ ├── index.astro
-│ └── info.astro
+│   ├── components
+│   │   ├── recommend
+│   │   │   └── Recommend.astro
+│   │   ├── BaseHead.astro
+│   │   ├── Footer.astro
+│   │   ├── Header.astro
+│   │   └── HeaderLink.astro
+│   ├── content
+│   │   └── config.ts
+│   ├── layouts
+│   │   └── BaseLayout.astro
+│   └── pages
+│       ├── page
+│       │   └── [...page].astro
+│       ├── taxonomy
+│       │   ├── [slug].astro
+│       │   └── index.astro
+│       ├── [...slug].astro
+│       ├── index.astro
+│       └── info.astro
 ├── .browserslistrc
 ├── .env
 ├── .gitignore

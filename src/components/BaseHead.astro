@@ -1,10 +1,12 @@
 ---
+const { title, description, noindex = false } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const gtmHeadCode = `<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KHQMJQW6');</script>`;
 ---
 
 <div set:html={gtmHeadCode} />
+
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -14,12 +16,15 @@ const gtmHeadCode = `<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
+<!-- noindex を使う場合 -->
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
 <!-- Primary Meta Tags -->
-<title>ゆるーりサモンズボード攻略ブログ</title>
-<meta name="title" content="ゆるーりサモンズボード攻略ブログ" />
+<title>{title ?? 'ゆるーりサモンズボード攻略ブログ'}</title>
+<meta name="title" content={title ?? 'ゆるーりサモンズボード攻略ブログ'} />
 <meta
   name="description"
-  content="スマホゲーム「サモンズボード」の攻略ブログです。"
+  content={description ?? 'スマホゲーム「サモンズボード」の攻略ブログです。'}
 />
 
 <!-- Open Graph / Facebook -->
