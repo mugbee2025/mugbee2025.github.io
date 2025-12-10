@@ -1,15 +1,17 @@
 ---
+import '../styles/global.scss';
 import BaseHead from '../components/BaseHead.astro';
 
-const { noindex = false } = Astro.props;
+const { noindex = false, title, description, image } = Astro.props;
 const gtmBodyCode = `<noscript><iframe title="Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id=GTM-KHQMJQW6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`;
 ---
 
 <html lang="ja">
   <head>
     <BaseHead
-      title={Astro.props.title}
-      description={Astro.props.description}
+      title={title}
+      description={description}
+      image={image}
       noindex={noindex}
     />
   </head>

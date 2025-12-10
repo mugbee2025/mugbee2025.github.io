@@ -6,14 +6,14 @@ const config = {
   useTabs: false,
   semi: true,
   singleQuote: true,
-  quoteProps: "as-needed",
-  trailingComma: "es5",
+  quoteProps: 'as-needed',
+  trailingComma: 'es5',
   bracketSpacing: true,
-  arrowParens: "always",
-  endOfLine: "lf",
+  arrowParens: 'always',
+  endOfLine: 'lf',
 
   // Astro用プラグイン
-  plugins: ["prettier-plugin-astro"],
+  plugins: ['prettier-plugin-astro'],
 
   // ファイルタイプ別の設定上書き
   overrides: [],

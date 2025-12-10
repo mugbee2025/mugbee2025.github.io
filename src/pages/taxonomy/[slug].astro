@@ -37,7 +37,7 @@ export async function getStaticPaths() {
 const { slug, posts } = Astro.props;
 ---
 
-<BaseLayout pageTitle={`分類: ${slug}`}>
+<BaseLayout pageTitle={`分類: ${slug}`} noindex={true}>
   <Header />
 
   <h1>「{slug}」に該当する記事</h1>

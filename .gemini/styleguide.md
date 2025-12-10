@@ -12,6 +12,8 @@
 
 ## 3. コードルール
 
-- Don't Repeat Yourself
-- Keep it short and simple.
-- You Aren't Gonna Need It
+- DRY（Don't Repeat Yourself）
+- KISS（Keep It Simple, Stupid）
+- YAGNI（You Aren't Gonna Need It）
+- OAOO（Once And Only Once）
+- 整合性チェック（Consistency Check）

@@ -47,51 +47,54 @@ const pickupBlogs = pickupIds
   .filter((b): b is (typeof blogs)[number] => Boolean(b));
 ---
 
-<BaseLayout title={blog.data.title}>
-  <Header />
+<BaseLayout
+  title={blog.data.title}
+  description={blog.data.description}
+  image={blog.data.thumbnail?.url}
+/>
+<Header />
 
-  <main>
-    <h1 class="title">{blog.data.title}</h1>
+<main>
+  <h1 class="title">{blog.data.title}</h1>
 
-    {
-      blog.data.thumbnail && (
-        <img src={blog.data.thumbnail.url} alt={blog.data.title} />
-      )
-    }
+  {
+    blog.data.thumbnail && (
+      <img src={blog.data.thumbnail.url} alt={blog.data.title} />
+    )
+  }
 
-    {
-      blog.data.category?.length && (
-        <ul>
-          {blog.data.category.map((cat) => (
-            <li>
-              <a href={`/taxonomy/${cat}`}>{cat}</a>
-            </li>
-          ))}
-        </ul>
-      )
-    }
+  {
+    blog.data.category?.length && (
+      <ul>
+        {blog.data.category.map((cat) => (
+          <li>
+            <a href={`/taxonomy/${cat}`}>{cat}</a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
 
-    {
-      blog.data.tags?.length && (
-        <ul>
-          {blog.data.tags.map((tag) => (
-            <li>
-              <a href={`/taxonomy/${tag.slug}`}>#{tag.name}</a>
-            </li>
-          ))}
-        </ul>
-      )
-    }
+  {
+    blog.data.tags?.length && (
+      <ul>
+        {blog.data.tags.map((tag) => (
+          <li>
+            <a href={`/taxonomy/${tag.slug}`}>#{tag.name}</a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
 
-    <p>
-      公開 {publishedDate}
-      {blog.data.updatedAt !== blog.data.publishedAt && <>更新 {updatedDate}</>}
-    </p>
+  <p>
+    公開 {publishedDate}
+    {blog.data.updatedAt !== blog.data.publishedAt && <>更新 {updatedDate}</>}
+  </p>
 
-    <div set:html={blog.data.content} />
+  <div set:html={blog.data.content} />
 
-    <Recommend contents={pickupBlogs} title="ピックアップ" />
-  </main>
+  <Recommend contents={pickupBlogs} title="ピックアップ" />
+</main>
 
-  <Footer />
-</BaseLayout>
+<Footer />
