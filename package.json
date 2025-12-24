@@ -10,6 +10,7 @@
     "update:docs": "npx tree-node-cli -a --dirs-first -I 'node_modules|\\.git/' > docs/_generated/directory-tree.md"
   },
   "dependencies": {
+    "@astrojs/partytown": "^2.1.4",
     "astro": "^5.16.6"
   },
   "devDependencies": {
