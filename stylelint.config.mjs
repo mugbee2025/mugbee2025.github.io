@@ -1,5 +1,7 @@
 /** @type {import("stylelint").Config} */
 export default {
+  ignores: ["dist", ".astro", "node_modules", ".vscode", ".git"],
+
   extends: [
     "stylelint-config-standard",
     "stylelint-config-standard-scss",

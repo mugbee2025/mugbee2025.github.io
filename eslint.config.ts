@@ -7,17 +7,7 @@ import prettier from "eslint-config-prettier";
 
 export default defineConfig([
   {
-    ignores: [
-      "dist",
-      ".astro",
-      "node_modules",
-      ".vscode",
-      ".git",
-      "*.config.js",
-      "*.config.mjs",
-      "*.config.ts",
-      ".prettierrc.*",
-    ],
+    ignores: ["dist", ".astro", "node_modules", ".vscode", ".git"],
   },
 
   {
