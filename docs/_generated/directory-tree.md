@@ -13,7 +13,8 @@ mugbee2025
 │       └── deploy.yml
 ├── .vscode
 │   ├── extensions.json
-│   └── launch.json
+│   ├── launch.json
+│   └── settings.json
 ├── docs
 │   └── _generated
 │       ├── directory-tree.md
