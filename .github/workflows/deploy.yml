@@ -25,7 +25,11 @@ jobs:
           node-version: 20
 
       - run: npm ci
-      - run: npm run build
+
+      - name: Build Astro site
+        env:
+          PUBLIC_GTM_ID: ${{ secrets.PUBLIC_GTM_ID }}
+        run: npm run build
 
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -38,5 +42,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deployment
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
