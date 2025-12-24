@@ -1,0 +1,31 @@
+{
+  // Astro
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "files.associations": {
+    "*.astro": "astro"
+  },
+
+  // Editor
+  "editor.insertSpaces": true,
+  "diffEditor.codeLens": true,
+  "geminicodeassist.inlineSuggestions.nextEditPredictions": true,
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "on",
+    "strings": "on"
+  },
+
+  // Emmet
+  "emmet.includeLanguages": {
+    "astro": "html"
+  },
+  "emmet.variables": {
+    "lang": "ja"
+  },
+
+  // cSpell
+  "cSpell.ignorePaths": [],
+  "cSpell.words": []
+}
