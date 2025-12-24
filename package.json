@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "update:docs": "npx tree-node-cli -a --dirs-first -I 'node_modules|\\.git/' > docs/_generated/directory-tree.md"
   },
   "dependencies": {
     "astro": "^5.16.6"
