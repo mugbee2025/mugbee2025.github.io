@@ -30,8 +30,13 @@ mugbee2025
 │       └── index.astro
 ├── .gitignore
 ├── .nojekyll
+├── .prettierignore
+├── .prettierrc.mjs
+├── .stylelintignore
 ├── README.md
 ├── astro.config.mjs
+├── eslint.config.ts
 ├── package-lock.json
 ├── package.json
+├── stylelint.config.mjs
 └── tsconfig.json
