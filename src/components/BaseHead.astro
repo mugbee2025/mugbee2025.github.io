@@ -1,11 +1,8 @@
 ---
+import { site } from '../data/constants';
+
 const GTM_ID = import.meta.env.PUBLIC_GTM_ID;
 const { title, description } = Astro.props;
-
-const site = {
-  title: 'Astro',
-  description: 'Astroのテストサイトです',
-};
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const siteTitle = site.title;
