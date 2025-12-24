@@ -1,5 +1,11 @@
 {
   "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "module": "esnext",
+    "jsx": "preserve",
+    "types": ["astro/client"]
+  },
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "exclude": ["node_modules", "dist"]
 }
