@@ -7,10 +7,13 @@ mugbee2025
 │   ├── data-store.json
 │   ├── settings.json
 │   └── types.d.ts
+├── .gemini
+│   └── styleguide.md
 ├── .git
 ├── .github
-│   └── workflows
-│       └── deploy.yml
+│   ├── workflows
+│   │   └── deploy.yml
+│   └── pull_request_template.md
 ├── .vscode
 │   ├── extensions.json
 │   ├── launch.json
