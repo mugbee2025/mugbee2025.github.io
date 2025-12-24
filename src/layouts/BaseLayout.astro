@@ -1,0 +1,28 @@
+---
+import '../styles/settings/global.scss';
+import BaseHead from '../components/BaseHead.astro';
+
+const GTM_ID = import.meta.env.PUBLIC_GTM_ID;
+const { title, description } = Astro.props;
+---
+
+<html lang="ja">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <body>
+    <noscript>
+      <iframe
+        title="Google Tag Manager"
+        src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      >
+      </iframe>
+    </noscript>
+
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,43 @@
+---
+const GTM_ID = import.meta.env.PUBLIC_GTM_ID;
+const { title, description } = Astro.props;
+
+const site = {
+  title: 'Astro',
+  description: 'Astroのテストサイトです',
+};
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const siteTitle = site.title;
+const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+const pageDesc = description ?? site.description;
+---
+
+<!-- Google Tag Manager (Partytown) -->
+<script type="text/partytown" define:vars={{ GTM_ID }}>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    const f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', GTM_ID);
+</script>
+
+<!-- Global Meta -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Site Links -->
+<link rel="canonical" href={canonicalURL.href} />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+<!-- Primary Meta -->
+<title>{pageTitle}</title>
+<meta name="description" content={pageDesc} />
