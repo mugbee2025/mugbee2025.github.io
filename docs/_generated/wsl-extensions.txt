@@ -1,0 +1,11 @@
+WSL: Ubuntu にインストールされている拡張機能:
+anteprimorac.html-end-tag-labels
+astro-build.astro-vscode
+dbaeumer.vscode-eslint
+esbenp.prettier-vscode
+google.geminicodeassist
+jock.svg
+ms-ceintl.vscode-language-pack-ja
+streetsidesoftware.code-spell-checker
+streetsidesoftware.code-spell-checker-cspell-bundled-dictionaries
+stylelint.vscode-stylelint
