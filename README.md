@@ -7,13 +7,13 @@
 
 ## サイト概要
 
-| 項目 | 内容 |
-| --- | --- |
-| サイト名 | サモンズボードざっくり冒険録 |
-| サイト管理者 | Mugbee（まぐびー） |
-| サイト URL | https://mugbee2025.github.io |
-| 対象ゲーム | サモンズボード |
-| 公式サイト | https://sb.gungho.jp/ |
+| 項目         | 内容                         |
+| ------------ | ---------------------------- |
+| サイト名     | サモンズボードざっくり冒険録 |
+| サイト管理者 | Mugbee（まぐびー）           |
+| サイト URL   | https://mugbee2025.github.io |
+| 対象ゲーム   | サモンズボード               |
+| 公式サイト   | https://sb.gungho.jp/        |
 
 ---
 
@@ -68,7 +68,7 @@ https://mugbee2025.github.io/info
   https://github.com/mugbee2025/mugbee2025.github.io/issues
 
 - YouTube チャンネル掲示板
-  https://www.youtube.com/post/Ugkxiv4f55qYlbCyO0MfhoyXIyDdi41q5vlh
+  https://www.youtube.com/channel/UC5UfMqhWwMPSSPzuG2SZE-w
 
 - X（旧 Twitter）DM
   https://x.com/mugbee_summons
