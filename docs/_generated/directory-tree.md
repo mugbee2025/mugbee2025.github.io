@@ -26,17 +26,21 @@ mugbee2025
 ├── public
 │   └── favicon.svg
 ├── src
-│   └── pages
-│       └── index.astro
+│   ├── pages
+│   │   └── index.astro
+│   └── styles
+│       └── settings
+│           └── global.scss
+├── .browserslistrc
 ├── .gitignore
 ├── .nojekyll
 ├── .prettierignore
 ├── .prettierrc.mjs
-├── .stylelintignore
 ├── README.md
 ├── astro.config.mjs
 ├── eslint.config.ts
 ├── package-lock.json
 ├── package.json
+├── postcss.config.mjs
 ├── stylelint.config.mjs
 └── tsconfig.json
