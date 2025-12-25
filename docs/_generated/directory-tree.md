@@ -1,6 +1,7 @@
 mugbee2025
 ├── .astro
 │   ├── collections
+│   │   └── blogs.schema.json
 │   ├── content-assets.mjs
 │   ├── content-modules.mjs
 │   ├── content.d.ts
@@ -26,12 +27,23 @@ mugbee2025
 ├── public
 │   └── favicon.svg
 ├── src
+│   ├── components
+│   │   └── BaseHead.astro
+│   ├── content
+│   │   ├── config.ts
+│   │   └── microcms.ts
+│   ├── data
+│   │   └── constants.ts
+│   ├── layouts
+│   │   └── BaseLayout.astro
 │   ├── pages
+│   │   ├── [...slug].astro
 │   │   └── index.astro
 │   └── styles
 │       └── settings
 │           └── global.scss
 ├── .browserslistrc
+├── .env
 ├── .gitignore
 ├── .nojekyll
 ├── .prettierignore
