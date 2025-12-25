@@ -28,6 +28,8 @@ jobs:
 
       - name: Build Astro site
         env:
+          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
           PUBLIC_GTM_ID: ${{ secrets.PUBLIC_GTM_ID }}
         run: npm run build
 
