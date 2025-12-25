@@ -1,7 +1,25 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/constants.ts';
+
+const blogs = await getCollection('blogs');
 ---
 
-<BaseLayout title="トップ" description="トップページ">
-  <h1>Astro</h1>
+<BaseLayout title={site.title} description={site.description}>
+  <main>
+    {
+      blogs.length > 0 ? (
+        <ul>
+          {blogs.map((blog) => (
+            <li>
+              <a href={`/${blog.data.slug}/`}>{blog.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>記事がありません。</p>
+      )
+    }
+  </main>
 </BaseLayout>
