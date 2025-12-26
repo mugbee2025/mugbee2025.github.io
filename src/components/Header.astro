@@ -1,0 +1,28 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import { site } from '../data/constants.ts';
+
+const isTop = Astro.url.pathname === '/';
+---
+
+<header>
+  {
+    isTop ? (
+      <h1 class="title">
+        <a href="/">{site.title}</a>
+      </h1>
+    ) : (
+      <p class="title">
+        <a href="/">{site.title}</a>
+      </p>
+    )
+  }
+
+  <nav>
+    <ul>
+      <li>
+        <HeaderLink href="/">最新記事</HeaderLink>
+      </li>
+    </ul>
+  </nav>
+</header>
