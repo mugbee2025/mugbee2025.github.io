@@ -3,20 +3,13 @@ import HeaderLink from './HeaderLink.astro';
 import { site } from '../data/constants.ts';
 
 const isTop = Astro.url.pathname === '/';
+const TitleTag = isTop ? 'h1' : 'p';
 ---
 
 <header>
-  {
-    isTop ? (
-      <h1 class="title">
-        <a href="/">{site.title}</a>
-      </h1>
-    ) : (
-      <p class="title">
-        <a href="/">{site.title}</a>
-      </p>
-    )
-  }
+  <TitleTag class="title">
+    <a href="/">{site.title}</a>
+  </TitleTag>
 
   <nav>
     <ul>
