@@ -1,0 +1,55 @@
+---
+import { site } from '../data/constants.ts';
+
+const today = new Date();
+---
+
+<footer>
+  <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+    ▲ ページ上部へ ▲
+  </button>
+
+  <nav>
+    <ul>
+      <li>
+        <a
+          href="https://github.com/mugbee2025/mugbee2025.github.io"
+          rel="noopener noreferrer"
+          title="GitHub"
+        >
+          <img src="/icons/github.svg" alt="GitHub" />
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.youtube.com/channel/UC5UfMqhWwMPSSPzuG2SZE-w"
+          rel="noopener noreferrer"
+          title="YouTube"
+        >
+          <img src="/icons/youtube.svg" alt="YouTube" />
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://x.com/mugbee_summons"
+          rel="noopener noreferrer"
+          title="X（旧Twitter）"
+        >
+          <img src="/icons/x.svg" alt="X(旧Twitter)" />
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <small>
+    &copy; {today.getFullYear()}
+    <a href="/">{site.title}</a>. All rights reserved.
+  </small>
+</footer>
+
+<style lang="scss">
+  nav img {
+    width: 30px;
+    height: 30px;
+  }
+</style>

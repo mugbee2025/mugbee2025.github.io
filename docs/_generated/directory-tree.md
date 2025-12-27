@@ -25,10 +25,19 @@ mugbee2025
 │       ├── wsl-extensions.txcode
 │       └── wsl-extensions.txt
 ├── public
+│   ├── icons
+│   │   ├── github.svg
+│   │   ├── x.svg
+│   │   └── youtube.svg
+│   ├── apple-touch-icon.png
+│   ├── favicon.ico
 │   └── favicon.svg
 ├── src
 │   ├── components
-│   │   └── BaseHead.astro
+│   │   ├── BaseHead.astro
+│   │   ├── Footer.astro
+│   │   ├── Header.astro
+│   │   └── HeaderLink.astro
 │   ├── content
 │   │   ├── config.ts
 │   │   └── microcms.ts
